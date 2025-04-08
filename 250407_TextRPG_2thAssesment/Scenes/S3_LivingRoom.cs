@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _250407_TextRPG_2thAssesment.Items;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
@@ -29,7 +30,16 @@ namespace _250407_TextRPG_2thAssesment
             commonMap[10, 33] = 'R';
             commonMap[17, 16] = ' ';
 
-            // L, R, F만 노랗게 출력해주기
+            // 숫자 배치해주기
+            commonMap[2, 8] = '4';
+            commonMap[15, 6] = '7';
+            commonMap[3, 21] = '6';
+            commonMap[13, 23] = '9';
+
+            //오브젝트 배치해주기
+            commonMap[4, 4] = commonMap[8, 28] = '●';
+
+            // L, R, F는 노란색으로 | 숫자는 까만색으로 | 오브젝트는 초록색으로 출력해주기
             for (int i = 0; i < commonMap.GetLength(0); i++)
             {
                 for (int j = 0; j < commonMap.GetLength(1); j++)
@@ -42,6 +52,18 @@ namespace _250407_TextRPG_2thAssesment
                         Console.Write(curChar);
                         Console.ResetColor();
                     }
+                    if (curChar == '4' || curChar == '7' || curChar == '6' || curChar == '9')
+                    {
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.Write(curChar);
+                        Console.ResetColor();
+                    }
+                    if (curChar == '●')
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write(curChar);
+                        Console.ResetColor();
+                    }
                     else
                     {
                         Console.Write(curChar);
@@ -50,15 +72,10 @@ namespace _250407_TextRPG_2thAssesment
                 Console.WriteLine();
             }
 
-        }
 
-        public override void CustomObjectRender()
-        {
-            Game.player.SetLocation(10, 10);
+            // 플레이어 그려주기
+            Game.player.SetLocation(20, 10);
             Game.player.PlayerRender();
-
-
-
 
         }
 
@@ -74,19 +91,39 @@ namespace _250407_TextRPG_2thAssesment
                     Game.changeScene("Left");
                     break;
                 case 'F':
-                    
-                    if (플레이어가 횃불을 가지고 있지 않으면)
-                        {
-                            Game.changeScene("Front_Locked");
-                        }
-                    else if (플레이어가 횃불을 가지고 있으면)
+                    //TODO: 이렇게 안 하면 인벤토리 클래스의 인벤토리일 뿐이고, 한 번 더 붙여야 인벤토리 필드에 접근 가능하다는데 공부 필요.
+                   foreach (Object item in Game.player.inventory.inventory)
+                    {
+                        if (item.name is "Torch")
                         {
                             Game.changeScene("Front_Unlocked");
                         }
+                        else
+                        {
+                            Game.changeScene("Front_Locked");
+                        }
+                    }
                     break;
                 case 'R':
                     Game.changeScene("Right");
                     break;
+                case '●':
+                    if (commonMap[4, 4] == commonMap[Game.player.playerlocation.x, Game.player.playerlocation.y])
+                    {
+                        Console.WriteLine("You found a WoodStick.");
+                        Console.WriteLine("Press 'I' to open Inventory.");
+                        WoodStick woodstick = new WoodStick();
+                        Game.player.inventory.Add(woodstick);
+                    }
+                    if (commonMap[8, 28] == commonMap[Game.player.playerlocation.x, Game.player.playerlocation.y])
+                    {
+                        Console.WriteLine("You found a Magnifier.");
+                        Console.WriteLine("Press 'I' to open Inventory.");
+                        Magnifier magnifier = new Magnifier();
+                        Game.player.inventory.Add(magnifier);
+                    }
+                    break;
+
 
             }
 

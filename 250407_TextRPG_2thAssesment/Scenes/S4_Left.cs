@@ -21,20 +21,26 @@ namespace _250407_TextRPG_2thAssesment
     {
         public override void Enter()
         {
+            Console.WriteLine("Enter the Password.");
 
-        }
-
-        public override void CommonRender()
-        {
-
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (int.TryParse(input, out int inputPassword) && inputPassword == 4769)
+                {
+                    Console.WriteLine("Access Granted.");
+                    CommonRender();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect password. Please try again.");
+                }
+            }
+           
         }
 
         public override void CustomMapRender(char[,] commonMap)
-        {
-
-        }
-
-        public override void CustomObjectRender()
         {
 
         }
