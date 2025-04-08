@@ -6,7 +6,37 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment
 {
-    class S1_Intro
+    /// <summary>
+    /// 인트로 메시지 출력
+    /// He will find his kin at last.
+    /// press A for start
+    /// </summary>
+
+    public class S1_Intro : Scene
     {
+        public override void Enter()
+        {
+
+        }
+
+        public override void CommonRender()
+        {
+
+        }
+
+        public override void CustomMapRender()
+        {
+            
+        }
+
+        public override void CustomObjectRender()
+        {
+            
+        }
+
+        public override void Exit()
+        {
+            
+        }
     }
 }

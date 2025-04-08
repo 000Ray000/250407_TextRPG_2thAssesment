@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment
 {
-    class Monster
+    public class Monster : Object, IInteractable
     {
+        // 필요한 정보들 (변수)
+        BasicInfo()
+
+        // 필요한 기능들 (함수)
+
+        // 1. 렌더되는 형태
+       
+
+        // 2. 상호작용 함수
+        public void Interact(ConsoleKey Key)
+        {
+
+        }
+
+        // 3. 생성패턴 
+        // TODO: 추후 구체적인 구현 확인 필요 
+
     }
 }
