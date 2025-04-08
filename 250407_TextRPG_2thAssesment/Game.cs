@@ -46,6 +46,7 @@ namespace _250407_TextRPG_2thAssesment
             sceneDic.Add("Left", new S4_Left());
             sceneDic.Add("Front_Locked", new S5_Front_Locked());
             sceneDic.Add("Front_Unlocked", new S6_Front_Unlocked());
+            sceneDic.Add("Right", new S65_Right());
             sceneDic.Add("Right_Freak", new S7_Right_Freak());
             sceneDic.Add("Right_Friend", new S8_Right_Friend());
             sceneDic.Add("HappyEnding", new S9_HappyEnd());
@@ -73,7 +74,7 @@ namespace _250407_TextRPG_2thAssesment
 
                 curScene.Enter();
                 curScene.CommonRender();
-                 curScene.CustomMapRender();
+                curScene.CustomMapRender(Scene.commonMap);
                 curScene.CustomObjectRender();
                 curScene.Input();
                 curScene.Result(curScene.input);

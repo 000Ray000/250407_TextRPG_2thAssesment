@@ -8,21 +8,17 @@ namespace _250407_TextRPG_2thAssesment
 {
     public class Inventory
     {
-        // TODO: 인벤토리 구현 디테일 추후 확인 필요
-
 
         // 인벤토리가 가지는 기본 정보 (변수)
 
         // 1. 구조 - 리스트로 선언 
+        public List<Object> inventory; 
+
         // 2. UI - 스택으로 표시
+        public Stack<string> stack; 
+
         // 3. UI - 선택아이템 인덱스 확인
-
-        // 생성자 
-        public Inventory()
-        {
-
-        }
-
+        public int selectint;
 
         // 인벤토리가 가지는 기본 기능 (함수)
 
@@ -33,19 +29,14 @@ namespace _250407_TextRPG_2thAssesment
         }
 
         // 2. 아이템 추가하기 
-        public void AddItem()
+        public void Add(Object item)
         {
-
+            inventory.Add(item);
         }
 
-        // 3. 아이템 삭제하기 
-        public void RemoveItem()
-        {
 
-        }
-
-        // 4. 아이템 조합하기
-        public void Combine()
+        // 3. 아이템 조합하기
+        public void Combine(Object item1, Object item2)
         {
 
         }

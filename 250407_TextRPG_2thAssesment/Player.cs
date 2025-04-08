@@ -39,8 +39,15 @@ namespace _250407_TextRPG_2thAssesment
 
         }
 
+        // 2. 위치 설정하기
+        public void SetLocation(int x, int y)
+        {
+            playerlocation.x = x;
+            playerlocation.y = y;
+        }
 
-        // 2. 움직이기 
+
+        // 3. 움직이기 
         public void Action(ConsoleKey input)
         {
             Location targetLocation = playerlocation;
@@ -69,8 +76,11 @@ namespace _250407_TextRPG_2thAssesment
             }
 
             playerlocation = targetLocation;
-            // if (targetLocation == ) ;
+           /* if (targetLocation == '#' && targetLocation == '')
+            {
 
+            }
+           */
 
         }
 

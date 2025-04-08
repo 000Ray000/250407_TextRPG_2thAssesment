@@ -29,7 +29,7 @@ namespace _250407_TextRPG_2thAssesment
 
         }
 
-        public override void CustomMapRender()
+        public override void CustomMapRender(char[,] commonMap)
         {
 
         }
