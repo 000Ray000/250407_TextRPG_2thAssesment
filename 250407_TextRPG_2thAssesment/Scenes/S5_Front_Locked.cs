@@ -10,7 +10,7 @@ namespace _250407_TextRPG_2thAssesment
     /// 큰 방이 보인다.
     /// 움직이려고 하면 어두워서 움직일 수 없다고 함.
     /// </summary>
-    public class S5_Front_locked : Scene
+    public class S5_Front_Locked : Scene
     {
         public override void Enter()
         {
@@ -32,7 +32,7 @@ namespace _250407_TextRPG_2thAssesment
 
         }
 
-        public override void Exit()
+        public override void Exit(ConsoleKey input)
         {
 
         }

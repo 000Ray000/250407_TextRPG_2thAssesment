@@ -10,7 +10,7 @@ namespace _250407_TextRPG_2thAssesment
     {
 
         // 필요한 정보들 (변수)
-        BasicInfo()
+        // BasicInfo();
 
         // 필요한 기능들 (함수)
 

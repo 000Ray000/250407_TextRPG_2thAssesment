@@ -12,13 +12,17 @@ namespace _250407_TextRPG_2thAssesment
 
         // 1. 위치
         // Location 구조체에서 받아오기
+        public Location playerlocation;
 
         // 2. 인벤토리를 가짐 
+        public Inventory inventory;
 
         // 생성자 만들기
-        public Player()
+        public Player(int x, int y)
         {
-
+            inventory = new Inventory();
+            playerlocation.x = x;
+            playerlocation.y = y;
         }
 
 
@@ -28,13 +32,41 @@ namespace _250407_TextRPG_2thAssesment
         // 1. 맵에 출력되기 
         public void PlayerRender()
         {
+            Console.SetCursorPosition(playerlocation.x, playerlocation.y);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write("P");
+            Console.ResetColor();
 
         }
 
 
         // 2. 움직이기 
-        public void Moving()
+        public void Action(ConsoleKey input)
         {
+            Location targetLocation = playerlocation;
+            
+            switch(input)
+            {
+                case ConsoleKey.UpArrow:
+                case ConsoleKey.W:
+                    targetLocation.y--;
+                    break;
+                case ConsoleKey.DownArrow:
+                case ConsoleKey.S:
+                    targetLocation.y++;
+                    break;
+                case ConsoleKey.LeftArrow:
+                case ConsoleKey.A:
+                    targetLocation.x--;
+                    break;
+                case ConsoleKey.RightArrow:
+                case ConsoleKey.D:
+                    targetLocation.x++;
+                    break;
+            }
+
+           // if (targetLocation == ) ;
+
 
         }
 
@@ -42,7 +74,7 @@ namespace _250407_TextRPG_2thAssesment
         // 2. 오브젝트와 상호작용 -
         // Interactable 인터페이스 받아오기 
         // TODO: 소코반 확인하기 
-        public void Interact(ConsoleKey Key)
+        public void Interact(ConsoleKey Key, Player player)
         {
 
         }

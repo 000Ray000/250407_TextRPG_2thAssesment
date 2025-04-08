@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,9 +13,11 @@ namespace _250407_TextRPG_2thAssesment
 
         // 1. 이름 
         // 2. 상세 조회 시 디테일한 설명 
-        protected struct BasicInfo()
+        
+        public struct BasicInfo
         {
-
+            public string name;
+            public string detail;
         }
 
         // 3. 맵에서의 출력 형태
@@ -22,7 +25,7 @@ namespace _250407_TextRPG_2thAssesment
 
         // 생성자 (색, 심볼, 위치, 쓰였는지)
 
-        public GameObject()
+        public void GameObject()
         {
 
         }
@@ -38,7 +41,7 @@ namespace _250407_TextRPG_2thAssesment
 
         // 2. 플레이어 및 오브젝트와 상호작용 -
         // Interactable 인터페이스 받아오기 
-        public void Interact(ConsoleKey Key)
+        public void Interact(ConsoleKey Key, Player player)
         {
             
         }
