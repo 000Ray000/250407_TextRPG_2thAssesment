@@ -8,14 +8,11 @@ namespace _250407_TextRPG_2thAssesment.Parts
 {
     public class ThreadAndNeedle : Part
     {
-        public string name = "Thread and Needle";
-        public string details = "...";
-        public bool isused = false;
-
-        public void SetStatus(bool used)
+        public ThreadAndNeedle()
         {
-            this.isused = used;
+            name = "Thread and Needle";
+            details = "...";
+            isused = false;
         }
-
     }
 }

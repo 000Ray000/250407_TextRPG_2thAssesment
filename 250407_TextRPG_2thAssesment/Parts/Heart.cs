@@ -8,14 +8,11 @@ namespace _250407_TextRPG_2thAssesment.Parts
 {
     public class Heart : Part
     {
-        public string name = "Heart";
-        public string details = "Still warm.";
-        public bool isused = false;
-
-        public void SetStatus(bool used)
+        public Heart()
         {
-            this.isused = used;
+            name = "Heart";
+            details = "Still warm.";
+            isused = false;
         }
-
     }
 }

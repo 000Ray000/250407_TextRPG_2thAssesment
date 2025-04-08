@@ -32,11 +32,6 @@ namespace _250407_TextRPG_2thAssesment
 
         }
 
-        public override void CustomObjectRender()
-        {
-
-        }
-
         public override void Result(ConsoleKey input)
         {
 

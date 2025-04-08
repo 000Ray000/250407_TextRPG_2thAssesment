@@ -19,10 +19,6 @@ namespace _250407_TextRPG_2thAssesment
     /// </summary>
     public class S6_Front_Unlocked : Scene
     {
-        public override void Enter()
-        {
-
-        }
 
         public override void CommonRender()
         {
@@ -30,11 +26,6 @@ namespace _250407_TextRPG_2thAssesment
         }
 
         public override void CustomMapRender(char[,] commonMap)
-        {
-
-        }
-
-        public override void CustomObjectRender()
         {
 
         }

@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment.Items
 {
-    class Magnifier
+    public class Magnifier : Item
     {
+        public Magnifier()
+        {
+            name = "Magnifier";
+            details = "You can see everything in greater detail. Perhaps you'll uncover what has been hidden...";
+            isused = false;
+        }
+
     }
 }

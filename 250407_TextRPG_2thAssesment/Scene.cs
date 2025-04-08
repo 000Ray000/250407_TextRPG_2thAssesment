@@ -69,10 +69,7 @@ namespace _250407_TextRPG_2thAssesment
         public virtual void CustomMapRender(char[,] commonMap) { }
 
 
-        // 4. 커스텀 오브젝트 그려주기
-        public virtual void CustomObjectRender() { }
-
-        // 5. 입력받기
+        // 4. 입력받기
         public void Input()
         {
             input = Console.ReadKey(true).Key; 

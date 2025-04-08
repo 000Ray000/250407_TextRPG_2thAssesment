@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment.Furniture
 {
-    class MusicBox
+    public class MusicBox : Furniture
     {
+
     }
 }

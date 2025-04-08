@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment.Parts
 {
-    class Head
+    public class Head : Part
     {
+        public Head()
+        {
+            name = "Head";
+            details = "...";
+            isused = false;
+        }
+
     }
 }

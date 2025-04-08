@@ -12,29 +12,20 @@ namespace _250407_TextRPG_2thAssesment
     /// </summary>
     public class S5_Front_Locked : Scene
     {
-        public override void Enter()
-        {
 
-        }
-
-        public override void CommonRender()
-        {
-
-        }
 
         public override void CustomMapRender(char[,] commonMap)
         {
-
-        }
-
-        public override void CustomObjectRender()
-        {
-
+            Console.WriteLine("It's too dark to move.");
+       
         }
 
         public override void Result(ConsoleKey input)
         {
+            while (true)
+            {
 
+            }
         }
 
     }

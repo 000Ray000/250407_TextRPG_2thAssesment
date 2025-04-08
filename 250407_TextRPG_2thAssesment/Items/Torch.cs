@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment.Objects_Instances
 {
-    class Torch
+    public class Torch : Item
     {
+        public Torch()
+        {
+            name = "Torch";
+            details = "It shines with a radiant light, It can light up the darkness.";
+            isused = false;
+        }
+
     }
 }

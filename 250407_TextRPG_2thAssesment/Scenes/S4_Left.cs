@@ -42,7 +42,9 @@ namespace _250407_TextRPG_2thAssesment
 
         public override void CustomMapRender(char[,] commonMap)
         {
+            // 상자 배치하기 
 
+            // 플레이어 그려주기
         }
 
         public override void Result(ConsoleKey input)

@@ -9,7 +9,6 @@ namespace _250407_TextRPG_2thAssesment
     public class Furniture : Object, IInteractable
     {
         // 필요한 정보들 (변수)
-        // BasicInfo();
 
         // 필요한 기능들 (함수)
 

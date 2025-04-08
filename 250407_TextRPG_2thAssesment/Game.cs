@@ -75,7 +75,6 @@ namespace _250407_TextRPG_2thAssesment
                 curScene.Enter();
                 curScene.CommonRender();
                 curScene.CustomMapRender(Scene.commonMap);
-                curScene.CustomObjectRender();
                 curScene.Input();
                 curScene.Result(curScene.input);
             }

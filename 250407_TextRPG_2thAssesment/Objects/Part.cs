@@ -10,7 +10,7 @@ namespace _250407_TextRPG_2thAssesment
     {
 
         // 필요한 정보들 (변수)
-        // BasicInfo();
+        public bool isused;
 
         // 필요한 기능들 (함수)
 
@@ -24,5 +24,11 @@ namespace _250407_TextRPG_2thAssesment
 
         // 3. 사용형태 
         // TODO: 추후 구체적인 구현 확인 필요 
+
+        // 4. 사용 여부
+        public void SetStatus(bool used)
+        {
+            this.isused = used;
+        }
     }
 }

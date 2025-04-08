@@ -8,13 +8,11 @@ namespace _250407_TextRPG_2thAssesment.Parts
 {
     public class LeftLeg : Part
     {
-        public string name = "Left Leg";
-        public string details = "...";
-        public bool isused = false;
-
-        public void SetStatus(bool used)
+        public LeftLeg()
         {
-            this.isused = used;
+            name = "Left Leg";
+            details = "...";
+            isused = false;
         }
 
     }

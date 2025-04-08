@@ -79,6 +79,7 @@ namespace _250407_TextRPG_2thAssesment
            /* if (targetLocation == '#' && targetLocation == '')
             {
 
+                    //TODO: 벽일 때 막고, 상자일 때는 움직이게끔 해줘야 함. 
             }
            */
 
