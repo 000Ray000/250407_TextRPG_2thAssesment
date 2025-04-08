@@ -27,7 +27,7 @@ namespace _250407_TextRPG_2thAssesment
         // 인벤토리가 가지는 기본 기능 (함수)
 
         // 1. UI 출력 (인벤토리 창 출력)
-        public void InvenMenuRender()
+        public void Open()
         {
 
         }

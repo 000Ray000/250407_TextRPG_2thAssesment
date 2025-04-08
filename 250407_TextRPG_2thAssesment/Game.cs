@@ -31,11 +31,11 @@ namespace _250407_TextRPG_2thAssesment
         // 1. 시스템 - 초기화하기
         public static void Start()
         {
+            // 게임오버 초기화 (false로)
+            gameOver = false;
+            
             // 플레이어 초기값(위치 포함)
-            player = new Player(20, 7);
-
-            // 인벤토리 생성
-            inventory = new Inventory();
+            player = new Player(33, 30);
 
             // 씬 넣을 딕셔너리 생성, 씬 넣기
             sceneDic = new Dictionary<string, Scene>();
@@ -73,10 +73,10 @@ namespace _250407_TextRPG_2thAssesment
 
                 curScene.Enter();
                 curScene.CommonRender();
-                curScene.CustomMapRender();
+                 curScene.CustomMapRender();
                 curScene.CustomObjectRender();
                 curScene.Input();
-                curScene.Exit(curScene.input);
+                curScene.Result(curScene.input);
             }
 
 

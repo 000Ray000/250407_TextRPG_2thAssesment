@@ -63,9 +63,13 @@ namespace _250407_TextRPG_2thAssesment
                 case ConsoleKey.D:
                     targetLocation.x++;
                     break;
+                case ConsoleKey.I:
+                    inventory.Open();
+                    break;
             }
 
-           // if (targetLocation == ) ;
+            playerlocation = targetLocation;
+            // if (targetLocation == ) ;
 
 
         }

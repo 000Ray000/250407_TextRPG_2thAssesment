@@ -33,6 +33,8 @@ namespace _250407_TextRPG_2thAssesment
             Util.Print(" \n \n \n \n \n \n ", ConsoleColor.Black, 1000);
 
             Util.Print("Press Spacebar to Start.", ConsoleColor.White, 1000);
+            Console.SetCursorPosition(0, 0);
+
         }
 
         public override void CustomMapRender()
@@ -42,10 +44,10 @@ namespace _250407_TextRPG_2thAssesment
 
         public override void CustomObjectRender()
         {
-            
+
         }
 
-        public override void Exit(ConsoleKey input)
+        public override void Result(ConsoleKey input)
         {
            switch (input)
             {

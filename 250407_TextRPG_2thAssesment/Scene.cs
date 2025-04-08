@@ -59,8 +59,9 @@ namespace _250407_TextRPG_2thAssesment
             input = Console.ReadKey(true).Key; 
         }
 
-        // 6. 장면 전환하기
-        public abstract void Exit(ConsoleKey input);
+
+        // 6. 업데이트 (장면 전환 등)하기
+        public abstract void Result(ConsoleKey input);
 
 
 

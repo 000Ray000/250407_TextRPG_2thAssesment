@@ -31,11 +31,18 @@ namespace _250407_TextRPG_2thAssesment
 
         public override void CustomObjectRender()
         {
-
+            Game.player.PlayerRender();
         }
 
-        public override void Exit(ConsoleKey input)
+        public override void Result(ConsoleKey input)
         {
+            Game.player.Action(input);
+
+            if (Game.player.playerlocation.x > 29 && Game.player.playerlocation.x < 39
+                && Game.player.playerlocation.y > 14 && Game.player.playerlocation.y < 21)
+            {
+                Game.changeScene("LivingRoom"); 
+            }
 
         }
 

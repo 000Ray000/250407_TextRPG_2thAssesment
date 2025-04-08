@@ -32,7 +32,7 @@ namespace _250407_TextRPG_2thAssesment
 
         }
 
-        public override void Exit(ConsoleKey input)
+        public override void Result(ConsoleKey input)
         {
 
         }
