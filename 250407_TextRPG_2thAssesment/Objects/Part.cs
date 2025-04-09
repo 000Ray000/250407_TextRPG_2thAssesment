@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment
 {
-    public class Part : Object, IInteractable
+    public class Part : Object
     {
 
         // 필요한 정보들 (변수)

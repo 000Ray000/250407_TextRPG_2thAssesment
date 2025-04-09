@@ -50,6 +50,7 @@ namespace _250407_TextRPG_2thAssesment
         // 3. 움직이기 
         public void Action(ConsoleKey input)
         {
+            Console.SetCursorPosition(playerlocation.x, playerlocation.y);
             Location targetLocation = playerlocation;
             
             switch(input)

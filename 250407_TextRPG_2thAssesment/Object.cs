@@ -38,7 +38,7 @@ namespace _250407_TextRPG_2thAssesment
 
         // 2. 플레이어 및 오브젝트와 상호작용 -
         // Interactable 인터페이스 받아오기 
-        public void Interact(ConsoleKey Key, Player player)
+        public virtual void Interact(ConsoleKey key, Player player)
         {
             
         }

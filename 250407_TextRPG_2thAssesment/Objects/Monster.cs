@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment
 {
-    public class Monster : Object, IInteractable
+    public class Monster : Object
     {
         // 필요한 정보들 (변수)
         // 1. 몬스터의 위치 (추후 생성 위치 결정해줘야 해서)

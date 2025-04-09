@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment
 {
-    public class Furniture : Object, IInteractable
+    public class Furniture : Object
     {
         // 필요한 정보들 (변수)
 
@@ -15,7 +15,7 @@ namespace _250407_TextRPG_2thAssesment
         // 1. 렌더되는 형태
 
         // 2. 상호작용 함수
-        public void Interact(ConsoleKey Key)
+        public override void Interact(ConsoleKey key, Player player)
         {
 
         }

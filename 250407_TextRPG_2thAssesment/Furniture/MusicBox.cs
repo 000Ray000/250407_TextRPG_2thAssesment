@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _250407_TextRPG_2thAssesment.Furniture
+namespace _250407_TextRPG_2thAssesment.furniture
 {
     public class MusicBox : Furniture
     {

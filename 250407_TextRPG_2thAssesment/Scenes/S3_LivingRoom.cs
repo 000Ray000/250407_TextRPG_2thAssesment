@@ -22,6 +22,11 @@ namespace _250407_TextRPG_2thAssesment
     public class S3_LivingRoom : Scene
     {
 
+        public override void CommonRender()
+        {
+
+        }
+
         public override void CustomMapRender(char[,] commonMap)
         {
             // 입구 배치해주기 
@@ -48,7 +53,8 @@ namespace _250407_TextRPG_2thAssesment
 
                     if (curChar == 'L' || curChar == 'F' || curChar == 'R')
                     {
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.SetCursorPosition(j, i);
+                        Console.ForegroundColor = ConsoleColor.Yellow;                    
                         Console.Write(curChar);
                         Console.ResetColor();
                     }
@@ -74,7 +80,7 @@ namespace _250407_TextRPG_2thAssesment
 
 
             // 플레이어 그려주기
-            Game.player.SetLocation(20, 10);
+            Game.player.SetLocation(16, 17);
             Game.player.PlayerRender();
 
         }

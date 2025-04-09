@@ -17,14 +17,17 @@ namespace _250407_TextRPG_2thAssesment
         public override void CustomMapRender(char[,] commonMap)
         {
             Console.WriteLine("It's too dark to move.");
+            Console.WriteLine("Press the spacebar to go back to the living room.");
        
         }
 
         public override void Result(ConsoleKey input)
         {
-            while (true)
+            switch (input)
             {
-
+                case ConsoleKey.Spacebar:
+                    Game.changeScene("LivingRoom");
+                    break;
             }
         }
 

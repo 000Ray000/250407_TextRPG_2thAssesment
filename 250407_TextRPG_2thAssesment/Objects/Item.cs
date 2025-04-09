@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment
 {
-    public abstract class Item : Object, IInteractable
+    public abstract class Item : Object
     {
         // 필요한 정보들 (변수)
         public bool isused;
