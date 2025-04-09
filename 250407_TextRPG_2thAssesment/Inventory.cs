@@ -34,16 +34,24 @@ namespace _250407_TextRPG_2thAssesment
         // 1. UI 출력 (인벤토리 창 출력)
         public void Open()
         {
+            Console.SetCursorPosition(0, 0);
+            Console.Clear();
+
             Console.WriteLine("╔⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶✞⊷⊷⊷⊷⊷⊶⊶⊶⊷⊷⊷⊷⊷╗");
+            Console.WriteLine();
             if (inventory.Count == 0)
             {
                 Console.WriteLine(" Inventory is Empty. ");
             }
             for (int i = 0; i < inventory.Count; i++)
             {
-                Console.WriteLine("{0}. {1}", i++, inventory[i].name);
+                Console.WriteLine("{0}. {1}", i, inventory[i].name);
             }
-            Console.WriteLine("╚⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶✞⊷⊷⊶⊶⊶⊶⊶⊶⊶⊶⊷⊷⊷╝");
+            Console.WriteLine();
+            Console.WriteLine("╚⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶⊶✞⊷⊷⊶⊶⊶⊶⊶⊶⊶⊶⊷⊷⊷╝");
+            Console.WriteLine();
+            Console.WriteLine("Press D to see the description.");
+            Console.WriteLine("Press C to Combine the items.");
         }
 
         // 2. 아이템 추가하기 

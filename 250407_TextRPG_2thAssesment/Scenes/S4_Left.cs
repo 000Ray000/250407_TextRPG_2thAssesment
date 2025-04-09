@@ -1,6 +1,9 @@
-﻿using System;
+﻿using _250407_TextRPG_2thAssesment.Items;
+using _250407_TextRPG_2thAssesment.Parts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,8 +22,45 @@ namespace _250407_TextRPG_2thAssesment
     /// </summary>
     public class S4_Left : Scene
     {
+        private char[,] leftMap;
+
+        public S4_Left()
+        {
+            //commonMap 초기화
+            leftMap = new char[,]
+            {
+                       
+                //     0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  
+               /*0*/ {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'},
+               /*1*/ {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+               /*2*/ {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','■',' ',' ',' ',' ',' ',' ',' ',' ',' ','■',' ',' ',' ',' ','#'},
+               /*3*/ {'#',' ',' ','■',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','■',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+               /*4*/ {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','■',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+               /*5*/ {'#',' ',' ',' ',' ',' ',' ',' ','■',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+               /*6*/ {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','■',' ',' ',' ',' ',' ',' ',' ','#'},
+               /*7*/ {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+               /*8*/ {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','■',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+               /*9*/ {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+               /*10*/{'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+               /*11*/{'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','■',' ',' ',' ',' ',' ',' ','#'},
+               /*12*/{'#',' ',' ','■',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','■',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+               /*13*/{'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+               /*14*/{'#',' ',' ',' ',' ',' ',' ',' ',' ','■',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','■',' ',' ','#'},
+               /*15*/{'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+               /*16*/{'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+               /*17*/{'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'}
+            };
+
+        }
+
+
+
+
+        public bool isFirstEnter = true;
         public override void Enter()
         {
+            Console.SetCursorPosition(0, 0);
+            Console.Clear();
             Console.WriteLine("Enter the Password.");
 
             while (true)
@@ -28,8 +68,14 @@ namespace _250407_TextRPG_2thAssesment
                 string input = Console.ReadLine();
                 if (int.TryParse(input, out int inputPassword) && inputPassword == 4769)
                 {
-                    Console.WriteLine("Access Granted.");
-                    CommonRender();
+                    Util.Print("Access Granted.", ConsoleColor.Green, 2000);
+                    CustomMapRender(leftMap);
+                    
+                    if (isFirstEnter)
+                    {
+                        Game.player.SetLocation(33, 9);
+                        isFirstEnter = false;
+                    }
                     break;
                 }
                 else
@@ -40,18 +86,19 @@ namespace _250407_TextRPG_2thAssesment
            
         }
 
-        public override void CustomMapRender(char[,] commonMap)
+
+
+        public override void CustomMapRender(char[,] leftmap)
         {
-            // 오브젝트 (상자) 배치하기 
-            commonMap[3, 4] = commonMap[8, 5] = commonMap[15, 3] = commonMap[22, 4] = commonMap[29, 4] = commonMap[3, 9] = commonMap[11, 9] = commonMap[21, 8] = commonMap[26, 11] = commonMap[9, 13] = commonMap[19, 13] = commonMap[30, 13] = commonMap[3, 14] = commonMap[9, 14] = '■';
 
+            Console.SetCursorPosition(0, 0);
+            Console.Clear();
 
-            // 상자는 초록색으로 출력해주기
-            for (int i = 0; i < commonMap.GetLength(0); i++)
+            for (int i = 0; i < leftMap.GetLength(0); i++)
             {
-                for (int j = 0; j < commonMap.GetLength(1); j++)
+                for (int j = 0; j < leftMap.GetLength(1); j++)
                 {
-                    char curChar = commonMap[i, j];
+                    char curChar = leftMap[i, j];
 
                     if (curChar == '■')
                     {
@@ -68,14 +115,62 @@ namespace _250407_TextRPG_2thAssesment
             }
 
             // 플레이어 그려주기
-            Game.player.SetLocation(20, 10);
             Game.player.PlayerRender();
         }
 
         public override void Result(ConsoleKey input)
         {
-            // 플레이어가 상자를 밀면, 특정 위치에서는 상자를 민 자리에서 동그라미가 남는다.
-            // 플레이어 이동 함수를 생각해보자. 
+            // 추후, 플레이어가 상자를 밀면 동그라미가 드러나는 식으로 구현해볼 것.
+            Game.player.Action(input, commonMap);
+
+            char curChar = leftMap[Game.player.playerlocation.y, Game.player.playerlocation.x];
+
+            switch (curChar)
+            {
+                case ' ':
+                    if (Game.player.playerlocation.y == 9 && Game.player.playerlocation.x == 33)
+                    {
+                        Game.changeScene("LivingRoom");
+                    }
+                    break;
+                case '■':
+                    if (Game.player.playerlocation.y == 5 && Game.player.playerlocation.x == 8)
+                    {
+                        Console.SetCursorPosition(0, 20);
+                        Util.Print("You found a Candle.", ConsoleColor.White, 2000);
+                        Console.WriteLine();
+                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                        Candle candle = new Candle();
+                        Game.player.inventory.Add(candle);
+                    }
+                    else if (Game.player.playerlocation.y == 14 && Game.player.playerlocation.x == 9)
+                    {
+                        Console.SetCursorPosition(0, 20);
+                        Util.Print("You found a Left Arm.", ConsoleColor.White, 2000);
+                        Console.WriteLine();
+                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                        LeftArm leftarm = new LeftArm();
+                        Game.player.inventory.Add(leftarm);
+                    }
+                    else if (Game.player.playerlocation.y == 11 && Game.player.playerlocation.x == 26)
+                    {
+                        Console.SetCursorPosition(0, 20);
+                        Util.Print("You found a Left Leg.", ConsoleColor.White, 2000);
+                        Console.WriteLine();
+                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                        LeftLeg leftleg = new LeftLeg();
+                        Game.player.inventory.Add(leftleg);
+                    }
+                    break;
+
+
+            }
+
+
+
+
+
+
         }
 
     }

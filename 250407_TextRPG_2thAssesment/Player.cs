@@ -48,41 +48,42 @@ namespace _250407_TextRPG_2thAssesment
 
 
         // 3. 움직이기 
-        public void Action(ConsoleKey input)
+        public void Action(ConsoleKey input, char[,] map)
         {
             Console.SetCursorPosition(playerlocation.x, playerlocation.y);
-            Location targetLocation = playerlocation;
-            
-            switch(input)
+            Location targetlocation = playerlocation;
+
+            switch (input)
             {
                 case ConsoleKey.UpArrow:
                 case ConsoleKey.W:
-                    targetLocation.y--;
+                    targetlocation.y--;
                     break;
                 case ConsoleKey.DownArrow:
                 case ConsoleKey.S:
-                    targetLocation.y++;
+                    targetlocation.y++;
                     break;
                 case ConsoleKey.LeftArrow:
                 case ConsoleKey.A:
-                    targetLocation.x--;
+                    targetlocation.x--;
                     break;
                 case ConsoleKey.RightArrow:
                 case ConsoleKey.D:
-                    targetLocation.x++;
+                    targetlocation.x++;
                     break;
                 case ConsoleKey.I:
                     inventory.Open();
+                    return;
+                case ConsoleKey.C:
+                    // TODO: 인벤토리 조합 구현해야 함.
                     break;
             }
 
-            playerlocation = targetLocation;
-           /* if (targetLocation == '#' && targetLocation == '')
-            {
+            //if (map[targetlocation.y, targetlocation.x] != '#')
+           // {
+                playerlocation = targetlocation;
+           // }
 
-                    //TODO: 벽일 때 막고, 상자일 때는 움직이게끔 해줘야 함. 
-            }
-           */
 
         }
 

@@ -72,9 +72,7 @@ namespace _250407_TextRPG_2thAssesment
                 Console.SetCursorPosition(0, 0);
                 Console.Clear();
 
-                curScene.Enter();
-                curScene.CommonRender();
-                curScene.CustomMapRender(Scene.commonMap);
+                curScene.CustomMapRender(curScene.commonMap);
                 curScene.Input();
                 curScene.Result(curScene.input);
             }
@@ -88,6 +86,7 @@ namespace _250407_TextRPG_2thAssesment
         public static void changeScene(string scenename)
         {
             curScene = sceneDic[scenename];
+            curScene.Enter();
         }
 
 

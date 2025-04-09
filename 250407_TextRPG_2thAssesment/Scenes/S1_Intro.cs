@@ -15,7 +15,7 @@ namespace _250407_TextRPG_2thAssesment
     public class S1_Intro : Scene
     {
 
-        public override void CommonRender()
+        public override void CustomMapRender(char[,]commonMap)
         {
             char[] introchar = { 'H', 'e', ' ', 'w', 'i', 'l', 'l', ' ', 'f', 'i', 'n', 'd', ' ', 
                                  'h', 'i', 's', ' ', 'k', 'i', 'n', ' ', 'a', 't', ' ', 'l','a','s','t','.'};

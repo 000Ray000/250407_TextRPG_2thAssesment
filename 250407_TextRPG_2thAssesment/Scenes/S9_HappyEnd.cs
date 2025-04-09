@@ -13,7 +13,7 @@ namespace _250407_TextRPG_2thAssesment
     public class S9_HappyEnd : Scene
     {
 
-        public override void CommonRender()
+        public override void CustomMapRender(char[,] commonMap)
         {
             Util.Print("He found his kin by himself.", ConsoleColor.White, 2000);
             Util.Print(" \n \n \n \n \n \n ", ConsoleColor.Black, 3000);

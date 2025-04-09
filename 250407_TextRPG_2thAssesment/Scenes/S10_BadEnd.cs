@@ -12,7 +12,7 @@ namespace _250407_TextRPG_2thAssesment
     /// </summary>
     public class S10_BadEnd : Scene
     {
-        public override void CommonRender()
+        public override void CustomMapRender(char[,] commonMap)
         {
             Util.Print("there has be something you missed.", ConsoleColor.White, 1500);
             Util.Print(" \n \n \n \n \n \n ", ConsoleColor.Black, 3000);
