@@ -76,10 +76,15 @@ namespace _250407_TextRPG_2thAssesment
                     return;
             }
 
-            //if (map[targetlocation.y, targetlocation.x] != '#')
-           // {
-                playerlocation = targetlocation;
-           // }
+            // 콘솔 창의 범위를 벗어나지 않도록 위치 제한
+             int maxWidth = Console.WindowWidth - 1; // 콘솔 창의 최대 너비
+             int maxHeight = Console.WindowHeight - 1; // 콘솔 창의 최대 높이
+             
+             if (targetlocation.x >= 0 && targetlocation.x <= maxWidth &&
+              targetlocation.y >= 0 && targetlocation.y <= maxHeight)
+             {
+                    playerlocation = targetlocation;
+             }
 
 
         }
@@ -106,6 +111,7 @@ namespace _250407_TextRPG_2thAssesment
                             }
                         }
                     }
+                    inventory.Open();
                     break;
 
                 case ConsoleKey.D:
@@ -121,6 +127,7 @@ namespace _250407_TextRPG_2thAssesment
                             Console.WriteLine("Invaild item number. please try again.");
                         }
                     }
+                    inventory.Open();
                     break;
                 case ConsoleKey.H:
                     inventory.Isdone();

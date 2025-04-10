@@ -15,13 +15,12 @@ namespace _250407_TextRPG_2thAssesment
         public override void CustomMapRender(char[,] commonMap)
         {
             Util.Print("there has be something you missed.", ConsoleColor.White, 1500);
-            Util.Print(" \n \n \n \n \n \n ", ConsoleColor.Black, 3000);
-
+            Util.Print(" \n \n \n \n \n \n ", ConsoleColor.Black, 1000);
+            Console.WriteLine("Press spacebar to exit.");
         }
 
         public override void Result(ConsoleKey input)
         {
-            Console.WriteLine("Press spacebar to Restart.");
             switch (input)
             {
                 case ConsoleKey.Spacebar:

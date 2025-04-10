@@ -60,9 +60,11 @@ namespace _250407_TextRPG_2thAssesment
         {
             if (isFirstEnter)
             {
-                Game.player.SetLocation(33, 9);
+                Game.player.SetLocation(0, 8);
                 isFirstEnter = false;
             }
+
+            commonMap = FriendMap;
 
         }
 
@@ -81,7 +83,7 @@ namespace _250407_TextRPG_2thAssesment
 
                     if (curChar == '●')
                     {
-                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.Write(curChar);
                         Console.ResetColor();
                     }
@@ -102,7 +104,7 @@ namespace _250407_TextRPG_2thAssesment
             Game.player.PlayerRender();
 
             Console.SetCursorPosition(0, 20);
-            Util.Print("♩  ♪  ♩   ♬   ♪   ♬ ....", ConsoleColor.DarkGray, 3000);
+            Util.Print("♩  ♪  ♩   ♬   ♪   ♬ ....", ConsoleColor.DarkGray,0);
 
         }
 
@@ -122,7 +124,7 @@ namespace _250407_TextRPG_2thAssesment
                     }
                     break;
                 case '●':
-                    Console.SetCursorPosition(0, 20);
+                    Console.SetCursorPosition(0, 22);
                     Util.Print("You found a Note.", ConsoleColor.White, 2000);
                     Console.WriteLine();
                     Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
@@ -130,7 +132,7 @@ namespace _250407_TextRPG_2thAssesment
                     Game.player.inventory.Add(note);
                     break;
                 case '♪':
-                    Console.SetCursorPosition(0, 20);
+                    Console.SetCursorPosition(0, 22);
                     Util.Print("You found a Thread and Needle.", ConsoleColor.White, 2000);
                     Util.Print("And at last... You found a HEART.", ConsoleColor.White, 2500);
                     Console.WriteLine();

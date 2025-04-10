@@ -54,8 +54,6 @@ namespace _250407_TextRPG_2thAssesment
             Console.WriteLine("Press C to Combine the items.");
             Console.WriteLine("Press H to check your status.");
             Console.WriteLine("Press spacebar to exit.");
-
-            Console.ReadKey();
             
             ConsoleKey input2 = Console.ReadKey(true).Key;
             Game.player.InventoryAction(input2);
@@ -99,7 +97,7 @@ namespace _250407_TextRPG_2thAssesment
 
         public void ItemDetail(Object item)
         {
-            Console.WriteLine("{0}", item.details);
+            Util.Print($"{item.details}", ConsoleColor.White, 2000);
         }
 
 
@@ -109,6 +107,8 @@ namespace _250407_TextRPG_2thAssesment
 
             if ((item1.name == "Candle" && item2.name == "WoodStick") || (item1.name == "WoodStick" && item2.name == "Candle"))
             {
+
+                Util.Print("You found a Torch.", ConsoleColor.White, 2000);
                 Torch torch = new Torch();
                 inventory.Add(torch);
                 inventory.Remove(item1);
@@ -117,6 +117,7 @@ namespace _250407_TextRPG_2thAssesment
             }
             if ((item1.name == "Old Photo" && item2.name == "Magnifier") || (item1.name == "Magnifier" && item2.name == "Old Photo"))
             {
+                Util.Print("You found a Letter.", ConsoleColor.White, 2000);
                 Letters letters = new Letters();
                 inventory.Add(letters);
                 inventory.Remove(item1);
@@ -132,8 +133,16 @@ namespace _250407_TextRPG_2thAssesment
             {
                 Console.WriteLine("It's done.");
                 inventory.RemoveAll(item => item is Part);
-                Game.changeScene("HappyEnd");
+                Game.changeScene("HappyEnding");
             }
+            else
+            {
+                Game.changeScene("BadEnding");
+            }
+                            
+
+                
+
         }
 
 
