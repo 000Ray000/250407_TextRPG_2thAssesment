@@ -93,11 +93,10 @@ namespace _250407_TextRPG_2thAssesment
         }
         
         // 5. 아이템 디테일 확인하기 
-        // TODO: 아이템 디테일 확인하기 구현하기 & 플레이어 Action에도 넣어주기 
 
         public void ItemDetail(Object item)
         {
-            Util.Print($"{item.details}", ConsoleColor.White, 2000);
+            Util.Print($"{item.details}", ConsoleColor.White, 3000);
         }
 
 
@@ -105,7 +104,7 @@ namespace _250407_TextRPG_2thAssesment
         public void ItemCombine(Object item1, Object item2)
         {
 
-            if ((item1.name == "Candle" && item2.name == "WoodStick") || (item1.name == "WoodStick" && item2.name == "Candle"))
+            if ((item1.name == "Candle" && item2.name == "Wood Stick") || (item1.name == "Wood Stick" && item2.name == "Candle"))
             {
 
                 Util.Print("You found a Torch.", ConsoleColor.White, 2000);
@@ -115,7 +114,7 @@ namespace _250407_TextRPG_2thAssesment
                 inventory.Remove(item2);
 
             }
-            if ((item1.name == "Old Photo" && item2.name == "Magnifier") || (item1.name == "Magnifier" && item2.name == "Old Photo"))
+            else if ((item1.name == "Old Photo" && item2.name == "Magnifier") || (item1.name == "Magnifier" && item2.name == "Old Photo"))
             {
                 Util.Print("You found a Letter.", ConsoleColor.White, 2000);
                 Letters letters = new Letters();
@@ -123,7 +122,12 @@ namespace _250407_TextRPG_2thAssesment
                 inventory.Remove(item1);
                 inventory.Remove(item2);
             }
+            else
+            {
+                Util.Print("You can't combine those items. Select Another items", ConsoleColor.White, 2000);
+            }
 
+            Open();
         }
 
         // 7. 파츠 조합 성공 여부 확인하기

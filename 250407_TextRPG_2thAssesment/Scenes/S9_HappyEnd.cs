@@ -16,8 +16,10 @@ namespace _250407_TextRPG_2thAssesment
         public override void CustomMapRender(char[,] commonMap)
         {
             Util.Print("He found his kin by himself.", ConsoleColor.White, 2000);
-            Util.Print(" \n \n \n \n \n \n ", ConsoleColor.Black, 3000);
+            Util.Print(" \n \n \n \n \n \n ", ConsoleColor.Black, 2000);
             Util.Print("He is not alone anymore.", ConsoleColor.White, 2000);
+            Util.Print(" \n \n \n \n \n \n ", ConsoleColor.Black, 2000);
+            Util.Print("                                                                                                                                                           \r\n                                                                                                                                   ___   ___               \r\n    //   / /     //   ) )     // | |     /|    / /     //   / /     //   / /     /|    / /     //   ) )  /__  ___/     //   / /       / /        /|    / / \r\n   //___        //___/ /     //__| |    //|   / /     //__ / /     //____       //|   / /     ((           / /        //____         / /        //|   / /  \r\n  / ___        / ___ (      / ___  |   // |  / /     //__  /      / ____       // |  / /        \\\\        / /        / ____         / /        // |  / /   \r\n //           //   | |     //    | |  //  | / /     //   \\ \\     //           //  | / /           ) )    / /        //             / /        //  | / /    \r\n//           //    | |    //     | | //   |/ /     //     \\ \\   //____/ /    //   |/ /     ((___ / /    / /        //____/ /    __/ /___     //   |/ /     \r\n", ConsoleColor.DarkCyan, 3000);
 
         }
 

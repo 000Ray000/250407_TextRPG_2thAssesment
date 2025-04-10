@@ -56,6 +56,7 @@ namespace _250407_TextRPG_2thAssesment
         {
             // 플레이어 위치 설정
             Game.player.SetLocation(17, 16);
+            commonMap = FrontUnlockedMap;
         }
 
 
@@ -117,7 +118,7 @@ namespace _250407_TextRPG_2thAssesment
                         Head head = new Head();
                         Game.player.inventory.Add(head);
                     }
-                    else if (Game.player.playerlocation.y == 14 && Game.player.playerlocation.x == 9)
+                    else if (Game.player.playerlocation.y == 2 && Game.player.playerlocation.x == 28)
                     {
                         Console.SetCursorPosition(0, 20);
                         Util.Print("You found a Torso.", ConsoleColor.White, 2000);
@@ -126,7 +127,7 @@ namespace _250407_TextRPG_2thAssesment
                         Torso torso = new Torso();
                         Game.player.inventory.Add(torso);
                     }
-                    else if (Game.player.playerlocation.y == 11 && Game.player.playerlocation.x == 26)
+                    else if (Game.player.playerlocation.y == 12 && Game.player.playerlocation.x == 24)
                     {
                         Console.SetCursorPosition(0, 20);
                         Util.Print("You found an Old Photo.", ConsoleColor.White, 2000);
