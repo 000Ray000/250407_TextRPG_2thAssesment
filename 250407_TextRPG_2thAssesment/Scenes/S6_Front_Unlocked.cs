@@ -112,27 +112,27 @@ namespace _250407_TextRPG_2thAssesment
                     if (Game.player.playerlocation.y == 5 && Game.player.playerlocation.x == 9)
                     {
                         Console.SetCursorPosition(0, 20);
-                        Util.Print("You found a Head.", ConsoleColor.White, 2000);
+                        Util.Print("You found a Head.", ConsoleColor.White, 1000);
                         Console.WriteLine();
-                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 1500);
                         Head head = new Head();
                         Game.player.inventory.Add(head);
                     }
                     else if (Game.player.playerlocation.y == 2 && Game.player.playerlocation.x == 28)
                     {
                         Console.SetCursorPosition(0, 20);
-                        Util.Print("You found a Torso.", ConsoleColor.White, 2000);
+                        Util.Print("You found a Torso.", ConsoleColor.White, 1000);
                         Console.WriteLine();
-                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 1500);
                         Torso torso = new Torso();
                         Game.player.inventory.Add(torso);
                     }
                     else if (Game.player.playerlocation.y == 12 && Game.player.playerlocation.x == 24)
                     {
                         Console.SetCursorPosition(0, 20);
-                        Util.Print("You found an Old Photo.", ConsoleColor.White, 2000);
+                        Util.Print("You found an Old Photo.", ConsoleColor.White, 1000);
                         Console.WriteLine();
-                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 1500);
                         OldPhoto oldphoto = new OldPhoto();
                         Game.player.inventory.Add(oldphoto);
                     }

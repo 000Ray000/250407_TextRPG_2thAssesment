@@ -125,20 +125,19 @@ namespace _250407_TextRPG_2thAssesment
                     break;
                 case '●':
                     Console.SetCursorPosition(0, 22);
-                    Util.Print("You found a Note.", ConsoleColor.White, 2000);
+                    Util.Print("You found a Note.", ConsoleColor.White, 1000);
                     Console.WriteLine();
-                    Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                    Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 1500);
                     Note note = new Note();
                     Game.player.inventory.Add(note);
                     break;
                 case '♪':
                     Console.SetCursorPosition(0, 22);
-                    Util.Print("You found a Thread and Needle.", ConsoleColor.White, 2000);
-                    Util.Print("And at last... You found a HEART.", ConsoleColor.White, 2500);
+                    Util.Print("You found a Thread and Needle.", ConsoleColor.White, 1000);
+                    Util.Print("And at last... You found a HEART.", ConsoleColor.White, 1500);
                     Console.WriteLine();
                     Console.WriteLine();
-                    Util.Print("You are ready to go.", ConsoleColor.White, 2000);
-                    Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                    Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 1500);
                     ThreadAndNeedle threadandneedle = new ThreadAndNeedle();
                     Heart HEART = new Heart();
                     Game.player.inventory.Add(threadandneedle);

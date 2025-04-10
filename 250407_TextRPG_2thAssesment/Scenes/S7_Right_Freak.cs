@@ -122,18 +122,18 @@ namespace _250407_TextRPG_2thAssesment
                     if (Game.player.playerlocation.y == 16 && Game.player.playerlocation.x == 1)
                     {
                         Console.SetCursorPosition(0, 20);
-                        Util.Print("You found a Right Leg.", ConsoleColor.White, 2000);
+                        Util.Print("You found a Right Leg.", ConsoleColor.White, 1000);
                         Console.WriteLine();
-                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 1500);
                         RightLeg rightleg = new RightLeg();
                         Game.player.inventory.Add(rightleg);
                     }
                     else if (Game.player.playerlocation.y == 12 && Game.player.playerlocation.x == 2)
                     {
                         Console.SetCursorPosition(0, 20);
-                        Util.Print("You found a Right Arm.", ConsoleColor.White, 2000);
+                        Util.Print("You found a Right Arm.", ConsoleColor.White, 1000);
                         Console.WriteLine();
-                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 1500);
                         RightArm rightarm = new RightArm();
                         Game.player.inventory.Add(rightarm);
                     }

@@ -141,9 +141,9 @@ namespace _250407_TextRPG_2thAssesment
                     if (Game.player.playerlocation.y == 4 && Game.player.playerlocation.x == 5)
                     {
                         Console.SetCursorPosition(0, 20);
-                        Util.Print("You found a WoodStick.",ConsoleColor.White, 2000);
+                        Util.Print("You found a WoodStick.",ConsoleColor.White, 1000);
                         Console.WriteLine();
-                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 1500);
                         WoodStick woodstick = new WoodStick();
                         Game.player.inventory.Add(woodstick);
                         return;
@@ -151,9 +151,9 @@ namespace _250407_TextRPG_2thAssesment
                     else if (Game.player.playerlocation.y == 12 && Game.player.playerlocation.x == 27)
                     {
                         Console.SetCursorPosition(0, 20);
-                        Util.Print("You found a Magnifier.", ConsoleColor.White, 2000);
+                        Util.Print("You found a Magnifier.", ConsoleColor.White, 1000);
                         Console.WriteLine();
-                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 1500);
                         Magnifier magnifier = new Magnifier();
                         Game.player.inventory.Add(magnifier);
                         return;

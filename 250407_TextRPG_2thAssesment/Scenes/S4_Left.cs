@@ -71,19 +71,21 @@ namespace _250407_TextRPG_2thAssesment
                     Util.Print("Access Granted.", ConsoleColor.Green, 2000);
                     CustomMapRender(leftMap);
                     
-                    if (isFirstEnter)
-                    {
+                   if (isFirstEnter)
+                   {
                         Game.player.SetLocation(33, 9);
                         isFirstEnter = false;
-                    }
-                    break;
+                   }
+                   break;
+
+                    
                 }
                 else
                 {
                     Console.WriteLine("Incorrect password. Please try again.");
                 }
             }
-           
+            commonMap = leftMap;
         }
 
 
@@ -137,27 +139,27 @@ namespace _250407_TextRPG_2thAssesment
                     if (Game.player.playerlocation.y == 5 && Game.player.playerlocation.x == 8)
                     {
                         Console.SetCursorPosition(0, 20);
-                        Util.Print("You found a Candle.", ConsoleColor.White, 2000);
+                        Util.Print("You found a Candle.", ConsoleColor.White, 1000);
                         Console.WriteLine();
-                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 1500);
                         Candle candle = new Candle();
                         Game.player.inventory.Add(candle);
                     }
                     else if (Game.player.playerlocation.y == 14 && Game.player.playerlocation.x == 9)
                     {
                         Console.SetCursorPosition(0, 20);
-                        Util.Print("You found a Left Arm.", ConsoleColor.White, 2000);
+                        Util.Print("You found a Left Arm.", ConsoleColor.White, 1000);
                         Console.WriteLine();
-                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 1500);
                         LeftArm leftarm = new LeftArm();
                         Game.player.inventory.Add(leftarm);
                     }
                     else if (Game.player.playerlocation.y == 11 && Game.player.playerlocation.x == 26)
                     {
                         Console.SetCursorPosition(0, 20);
-                        Util.Print("You found a Left Leg.", ConsoleColor.White, 2000);
+                        Util.Print("You found a Left Leg.", ConsoleColor.White, 1000);
                         Console.WriteLine();
-                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 2000);
+                        Util.Print("Press 'I' to open Inventory.", ConsoleColor.White, 1500);
                         LeftLeg leftleg = new LeftLeg();
                         Game.player.inventory.Add(leftleg);
                     }

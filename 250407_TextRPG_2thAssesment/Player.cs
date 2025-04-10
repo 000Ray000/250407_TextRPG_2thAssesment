@@ -78,8 +78,8 @@ namespace _250407_TextRPG_2thAssesment
             // 맵이 null이 아닌 경우에만 경계와 장애물 확인
             if (map != null)
             {
-                int mapWidth = map.GetLength(0);  
-                int mapHeight = map.GetLength(1); 
+                int mapHeight = map.GetLength(0);  
+                int mapWidth = map.GetLength(1); 
 
                 // 움직이려는 위치가 벽인지 확인
                 if (map[targetlocation.y, targetlocation.x] == '#')
@@ -88,9 +88,9 @@ namespace _250407_TextRPG_2thAssesment
                 }
             }
 
-             // 콘솔 창의 범위를 벗어나지 않도록 위치 제한
-             int maxWidth = Console.WindowWidth - 1; // 콘솔 창의 최대 너비
-             int maxHeight = Console.WindowHeight - 1; // 콘솔 창의 최대 높이
+            // 콘솔 창의 범위를 벗어나지 않도록 위치 제한
+            int maxHeight = Console.WindowHeight - 1; // 콘솔 창의 최대 너비
+            int maxWidth = Console.WindowWidth - 1; // 콘솔 창의 최대 높이
             
              if (targetlocation.x >= 0 && targetlocation.x <= maxWidth &&
               targetlocation.y >= 0 && targetlocation.y <= maxHeight)
