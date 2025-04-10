@@ -74,9 +74,6 @@ namespace _250407_TextRPG_2thAssesment
                 case ConsoleKey.I:
                     inventory.Open();
                     return;
-                case ConsoleKey.C:
-                    // TODO: 인벤토리 조합 구현해야 함.
-                    break;
             }
 
             //if (map[targetlocation.y, targetlocation.x] != '#')
@@ -86,6 +83,54 @@ namespace _250407_TextRPG_2thAssesment
 
 
         }
+
+        public void InventoryAction(ConsoleKey input)
+        {
+            switch (input)
+            {
+                case ConsoleKey.C:
+                    Console.WriteLine("please select the first item's number.");
+                    if (int.TryParse(Console.ReadLine(), out int itemindex1))
+                    {
+                        Console.WriteLine("Please select the second item's number");
+                        if (int.TryParse(Console.ReadLine(), out int itemindex2))
+                        {
+                            if (itemindex1 >= 0 && itemindex1 < inventory.inventory.Count &&
+                                itemindex2 >= 0 && itemindex2 < inventory.inventory.Count)
+                            {
+                                inventory.ItemCombine(inventory.inventory[itemindex1], inventory.inventory[itemindex2]);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invaild item number. please try again.");
+                            }
+                        }
+                    }
+                    break;
+
+                case ConsoleKey.D:
+                    Console.WriteLine("please select the item's number.");
+                    if (int.TryParse(Console.ReadLine(), out int itemindex3))
+                    {
+                        if (itemindex3 >= 0 && itemindex3 < inventory.inventory.Count)
+                        {
+                            inventory.ItemDetail(inventory.inventory[itemindex3]);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invaild item number. please try again.");
+                        }
+                    }
+                    break;
+                case ConsoleKey.H:
+                    inventory.Isdone();
+                    break;
+                case ConsoleKey.Spacebar:
+                    Game.changeScene("LivingRoom");
+                    break;
+            }
+        }
+
 
 
         // 2. 오브젝트와 상호작용 -

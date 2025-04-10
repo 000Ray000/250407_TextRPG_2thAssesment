@@ -52,6 +52,13 @@ namespace _250407_TextRPG_2thAssesment
             Console.WriteLine();
             Console.WriteLine("Press D to see the description.");
             Console.WriteLine("Press C to Combine the items.");
+            Console.WriteLine("Press H to check your status.");
+            Console.WriteLine("Press spacebar to exit.");
+
+            Console.ReadKey();
+            
+            ConsoleKey input2 = Console.ReadKey(true).Key;
+            Game.player.InventoryAction(input2);
         }
 
         // 2. 아이템 추가하기 
@@ -90,9 +97,14 @@ namespace _250407_TextRPG_2thAssesment
         // 5. 아이템 디테일 확인하기 
         // TODO: 아이템 디테일 확인하기 구현하기 & 플레이어 Action에도 넣어주기 
 
+        public void ItemDetail(Object item)
+        {
+            Console.WriteLine("{0}", item.details);
+        }
+
 
         // 6. 아이템 조합하기
-        public void ItemCombine(Object item1, Object item2, Part part1, Part part2, Part part3, Part part4, Part part5, Part part6, Part part7, Part part8)
+        public void ItemCombine(Object item1, Object item2)
         {
 
             if ((item1.name == "Candle" && item2.name == "WoodStick") || (item1.name == "WoodStick" && item2.name == "Candle"))
@@ -110,18 +122,21 @@ namespace _250407_TextRPG_2thAssesment
                 inventory.Remove(item1);
                 inventory.Remove(item2);
             }
+
+        }
+
+        // 7. 파츠 조합 성공 여부 확인하기
+        public void Isdone()
+        {
             if (this.PartsCheck() == true)
             {
                 Console.WriteLine("It's done.");
                 inventory.RemoveAll(item => item is Part);
                 Game.changeScene("HappyEnd");
             }
-
-
         }
 
 
-        
 
-    }
+        }
 }
