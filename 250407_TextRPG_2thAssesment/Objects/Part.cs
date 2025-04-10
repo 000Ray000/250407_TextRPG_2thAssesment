@@ -16,16 +16,7 @@ namespace _250407_TextRPG_2thAssesment
 
         // 1. 렌더되는 형태
 
-        // 2. 상호작용 함수
-        public void Interact(ConsoleKey Key)
-        {
-
-        }
-
-        // 3. 사용형태 
-        // TODO: 추후 구체적인 구현 확인 필요 
-
-        // 4. 사용 여부
+        // 2. 사용 여부
         public void SetStatus(bool used)
         {
             this.isused = used;

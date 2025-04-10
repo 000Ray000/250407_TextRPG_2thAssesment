@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment
 {
-    public abstract class Object : IInteractable
+    public abstract class Object
     {
         // 게임 내 오브젝트들이 공통으로 가지는 변수 
 
@@ -22,28 +22,6 @@ namespace _250407_TextRPG_2thAssesment
 
         // 생성자 (색, 심볼, 위치)
 
-        public void GameObject()
-        {
-
-        }
-
-
-        // 게임 내 오브젝트들이 공통으로 가지는 함수
-
-        // 1. 맵에 그려지기 
-        public void ObjectRender()
-        {
-
-        }
-
-        // 2. 플레이어 및 오브젝트와 상호작용 -
-        // Interactable 인터페이스 받아오기 
-        public virtual void Interact(ConsoleKey key, Player player)
-        {
-            
-        }
-
-        
 
     }
 }

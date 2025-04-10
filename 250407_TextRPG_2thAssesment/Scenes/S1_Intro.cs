@@ -6,11 +6,6 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment
 {
-    /// <summary>
-    /// 인트로 메시지 출력
-    /// He will find his kin at last.
-    /// press A for start
-    /// </summary>
 
     public class S1_Intro : Scene
     {

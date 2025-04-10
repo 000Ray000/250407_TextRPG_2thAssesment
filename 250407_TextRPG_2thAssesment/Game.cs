@@ -89,9 +89,5 @@ namespace _250407_TextRPG_2thAssesment
             curScene.Enter();
         }
 
-
-
-
-
     }
 }

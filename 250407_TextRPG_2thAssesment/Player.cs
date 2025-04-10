@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment
 {
-    public class Player : IInteractable
+    public class Player 
     {
         // 플레이어가 가지는 기본 정보 (변수)
 
@@ -24,7 +24,6 @@ namespace _250407_TextRPG_2thAssesment
             playerlocation.x = x;
             playerlocation.y = y;
         }
-
 
 
         // 플레이어가 가지는 기본 기능 (함수)
@@ -52,9 +51,9 @@ namespace _250407_TextRPG_2thAssesment
         {
             Console.SetCursorPosition(playerlocation.x, playerlocation.y);
             Location targetlocation = playerlocation;
-
-            switch (input)
-            {
+            
+                switch (input)
+                {
                 case ConsoleKey.UpArrow:
                 case ConsoleKey.W:
                     targetlocation.y--;
@@ -74,19 +73,32 @@ namespace _250407_TextRPG_2thAssesment
                 case ConsoleKey.I:
                     inventory.Open();
                     return;
+                }
+
+            // 맵이 null이 아닌 경우에만 경계와 장애물 확인
+            if (map != null)
+            {
+                int mapWidth = map.GetLength(0);  
+                int mapHeight = map.GetLength(1); 
+
+                // 움직이려는 위치가 벽인지 확인
+                if (map[targetlocation.y, targetlocation.x] == '#')
+                {
+                    return; // 장애물이 있으면 이동 X
+                }
             }
 
-            // 콘솔 창의 범위를 벗어나지 않도록 위치 제한
+             // 콘솔 창의 범위를 벗어나지 않도록 위치 제한
              int maxWidth = Console.WindowWidth - 1; // 콘솔 창의 최대 너비
              int maxHeight = Console.WindowHeight - 1; // 콘솔 창의 최대 높이
-             
+            
              if (targetlocation.x >= 0 && targetlocation.x <= maxWidth &&
               targetlocation.y >= 0 && targetlocation.y <= maxHeight)
              {
-                    playerlocation = targetlocation;
-             }
+                 playerlocation = targetlocation;
+              }
 
-
+            
         }
 
         public void InventoryAction(ConsoleKey input)
@@ -137,18 +149,6 @@ namespace _250407_TextRPG_2thAssesment
                     break;
             }
         }
-
-
-
-        // 2. 오브젝트와 상호작용 -
-        // Interactable 인터페이스 받아오기 
-        // TODO: 소코반 확인하기 
-        public void Interact(ConsoleKey Key, Player player)
-        {
-
-        }
-
-
 
     }
 }
