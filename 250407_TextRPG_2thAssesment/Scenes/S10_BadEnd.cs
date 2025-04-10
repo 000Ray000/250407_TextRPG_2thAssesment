@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment
 {
-    /// <summary>
-    /// (몬스터에게 죽으면)
-    /// there has be something you missed.
-    /// </summary>
+
     public class S10_BadEnd : Scene
     {
         public override void CustomMapRender(char[,] commonMap)

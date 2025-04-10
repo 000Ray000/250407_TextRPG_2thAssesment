@@ -8,13 +8,6 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment
 {
-    /// <summary>
-    /// 자물쇠에 암호 입력.
-    /// TODO: 맵이 계속 반복해서 출력되고, 빨간색 X는 처음에만 출력됨. 플레이어의 위치도 원하는대로 초기화되지 않음. 
-    /// TODO: 더불어, 플레이어가 맵이 출력되는 동시에 움직일 수 있어야 함. 
-    ///오른팔(◆)
-    ///오른다리(◆)
-    /// </summary>
     public class S7_Right_Freak : Scene
     {
 

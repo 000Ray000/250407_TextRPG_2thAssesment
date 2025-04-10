@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace _250407_TextRPG_2thAssesment
 {
-    /// <summary>
-    /// He found his kin by himself.
-    /// He is not alone anymore.
-    /// </summary>
+
     public class S9_HappyEnd : Scene
     {
 
